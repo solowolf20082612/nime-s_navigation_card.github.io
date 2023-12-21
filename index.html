@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+
+
+
+
+
+
+      background-image: url('https://wallpaperaccess.com/full/478290.jpg');
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .tabs {
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+
+    .tab {
+      float: left;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div  style="text-align:center" id="loginPage">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="password">Password:</label>
+      <input type="password" id="password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <!-- Dashboard Page -->
+  <div id="dashboard" style="display: none;">
+    <h1>WELCOME TO THE NIME'S DASHBOARD </h1>
+    <div class="tabs">
+      <div class="tab" onclick="openTab('personal information')">PERSONAL INFORMATION </div>
+      <div class="tab" onclick="openTab('ACADEMIC DETAILS')">ACADEMIC DETAILS </div>
+      <div class="tab" onclick="openTab('weakness')">ACHIEVEMENTS AND AWARDS</div>
+      <div class="tab" onclick="openTab('strength')">STRENGTH AND WEAKNESS</div>
+      <div class="tab" onclick="openTab('events')">EVENT PARTICIPATION AND TRACKING</div> 
+    
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="personal information" class="tabcontent">
+      <h2>PERSONAL INFORMATION</h2>
+      NAME: NIME PHILIP<br>
+      D.O.B: 4/3/2006<br>
+      CONTACT INFORMATION: 9826092798<br>
+      FATHER'S NAME: ADITYA PHILIP<br>
+      MOTHER'S NAME: PARUL PHILIP
+
+    </div>
+
+    <div id="ACADEMIC DETAILS" class="tabcontent">
+      <h2>ACADEMIC DETAILS</h2>
+        STUDENT ID: 765976<br>
+        ENROLLMENT STATUS: FULL-TIME STUDENT<br>
+        ACADEMIC PROGRAM: PCM<br>
+        GRADUATION DATE: 31/03/2025
+        
+
+    </div>
+
+    <div id="weakness" class="tabcontent">
+      <h2>ACHIEVEMENTS AND AWARDS</h2>
+      ACADEMIC ACHIEVEMENTS: 10 BOARD 97%<br>
+      Extracurricular Accomplishments: YELLOW BELT IN KARATE<br>
+      Awards Received: SOST JUNIOR BALVIGYAN WINNER
+             
+
+    </div>
+
+    <div id="strength" class="tabcontent">
+      <h2>STRENGTH AND WEAKNESS </h2>
+       GOOD AT MATHS<br>
+       AVERAGE AT SOST<br>
+       GOOD LEARNER CAN DO BETTER IF SOME ATTENTION IS GIVEN<br>
+       BAD AT CHEMISTRY AND PHYSICS ATTENTION REQUIRED
+    </div>
+ 
+    <div id="events" class="tabcontent">
+      <h2>EVENT PARTICIPATION AND TRACKING </h2>
+       EVENTS TAKEN PART IN: ANNUAL DAY<br>
+       EVENT ON: 26/12/2023<br>
+       NEXT EVENT: BALVIGYAN<br>
+       NEXT EVENT ON: 31/12/2023
+    </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  </div>
+
+  <script>
+    // Function to handle form submission
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var password = document.getElementById("password").value;
+      if (password === "1234@") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    });
+
+    // Function to switch between tabs
+    function openTab(tabName) {
+      var i, tabcontent;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+
